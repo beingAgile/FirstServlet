@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<TITLE>
+		Practicing
+		</TITLE>
+		<SCRIPT>
+			var a=0,j=100,r="";
+			var app="Apple";
+			for(i=0;i<app.length;i++)
+				document.write(app[i]);
+			function func()
+			{
+				for(var i=0;i<3;i++)
+				{
+					if(form1.elements[i].value=="")
+					{	
+						if(i<j)
+						j=i;
+
+						a=1;
+						r=r+form1.elements[i].name+" "+";";
+					}
+				}
+
+				if(a==1)
+				{
+					alert("Please fill the following  :"+r);
+					form1.elements[j].focus();
+				}
+
+			}
+
+			function func2()
+			{
+					if(form1.inp2.value=="")
+					form1.inp2.focus();
+			}
+
+			var flag=0;
+			function func3()
+			{
+				var name1=form1.inp1.value;
+				
+				for(var i=0;i<name1.length;i++)
+				{   
+
+					if(name1[i]<'A'||name1[i]>'Z')
+						flag=1;
+
+				}
+
+				if(flag==1)
+				{
+					alert("All Caps Please");
+					form1.inp1.value=form1.inp1.value.toUpperCase();
+				}
+
+			}
+
+
+		</SCRIPT>
+	</HEAD>
+	<BODY>
+		<FORM name="form1">
+			Name<Input type="text" name="inp1" value=""><br>
+			Gender<Input type="text" name="inp2" value="" onBlur="func2()"><br>
+			Hobby<Input type="text" name="inp3" value=""><br>
+			<Input type="button" name="btnFirst" value="Click Me" onClick="func()">
+			<Input type="button" name="btnSecond" value="Click" onClick="func3()">
+		</FORM>
+	</BODY>
+</HTML>
